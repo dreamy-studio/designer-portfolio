@@ -4,7 +4,7 @@ import type { SocialProject } from "@/data/social";
 import FadeInView from "@/components/ui/FadeInView";
 import CaseHero from "@/components/case/CaseHero";
 import SocialGalleryGrid from "./SocialGalleryGrid";
-import SocialSectionNav from "./SocialSectionNav";
+import CaseSubheader from "@/components/case/CaseSubheader";
 import { PAGE_PADDING_X } from "@/lib/constants";
 
 const KIND_LABELS: Record<string, string> = {
@@ -42,29 +42,21 @@ export default function SocialCasePage({ project }: { project: SocialProject }) 
         thumbnail={project.thumbnail}
       />
 
-      {/* Delineado info → galería, igual que en branding */}
-      {grouped.length > 0 && (
-        <FadeInView>
-          <hr className="mt-0 border-0 border-t-2 border-subtle/60 md:mt-20" aria-hidden="true" />
-        </FadeInView>
-      )}
-
-      {/* Nav anchor por kind */}
-      {kinds.length > 1 && (
-        <FadeInView>
-          <div className="mt-12">
-            <SocialSectionNav kinds={kinds} />
-          </div>
-        </FadeInView>
-      )}
+      {/* Subheader de secciones: hijo directo de main para que el sticky recorra la galería */}
+      <CaseSubheader
+        links={kinds.map((kind) => ({
+          id: `section-${kind}`,
+          label: KIND_LABELS[kind] ?? kind,
+        }))}
+      />
 
       {/* Secciones apiladas por kind */}
       <div className="mt-12 space-y-16">
         {grouped.map(([kind, assets]) => (
-          <section key={kind} id={`section-${kind}`} className="scroll-mt-28">
+          <section key={kind} id={`section-${kind}`} className="scroll-mt-32">
               <FadeInView>
                 <div className="mb-6">
-                  <h2 className="inline-block bg-foreground px-5 py-3 font-display text-2xl font-bold tracking-tight text-background md:text-3xl">
+                  <h2 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
                     {KIND_LABELS[kind] ?? kind}
                   </h2>
                 </div>

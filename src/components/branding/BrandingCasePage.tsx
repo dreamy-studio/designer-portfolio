@@ -26,7 +26,7 @@ export default function BrandingCasePage({ project }: { project: BrandingPiece }
           <div className="mt-10 md:mt-12">
               <FadeInView>
                 <div className="mb-6">
-                  <h2 className="inline-block bg-foreground px-5 py-3 font-display text-2xl font-bold tracking-tight text-background md:text-3xl">Galería</h2>
+                  <h2 className="font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">Galería</h2>
                 </div>
               </FadeInView>
               <BrandingGalleryGrid assets={gallery} />
