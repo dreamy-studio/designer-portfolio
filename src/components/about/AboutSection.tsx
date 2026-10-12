@@ -4,18 +4,18 @@ import { ABOUT, SOFTWARES } from "@/data/site";
 export default function AboutSection() {
   return (
     <FadeInView>
-      <div className="grid grid-cols-1 gap-16 md:grid-cols-12">
-        <div className="md:col-span-4">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="min-w-0 lg:col-span-5">
           <span className="text-sm font-mono font-medium text-muted">
             {ABOUT.sectionNumber}
           </span>
-          <h2 className="mt-1 font-display text-4xl font-bold uppercase tracking-tight md:text-5xl">
+          <h2 className="mt-1 font-display text-4xl font-bold uppercase tracking-tight break-words md:text-5xl">
             {ABOUT.title[0]}
             <br />
             {ABOUT.title[1]}
           </h2>
         </div>
-        <div className="relative md:col-span-7 md:col-start-6">
+        <div className="relative min-w-0 lg:col-span-6 lg:col-start-7">
           {ABOUT.paragraphs.map((paragraph, i) => (
             <p
               key={i}

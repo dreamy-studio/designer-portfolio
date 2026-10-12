@@ -126,6 +126,8 @@ main > footer {
 }
 
 /* Contacto no lleva separador inferior: desemboca en la ola del footer. */
+/* Hero no lleva separador inferior: el about empieza sin línea superior. */
+main > section#hero::after,
 main > footer#contact::after {
   content: none;
 }
@@ -203,4 +205,27 @@ footer[id],
 
 .animate-header-in {
   animation: headerSlideDown 0.5s ease;
+}
+
+/* Fondo hero: retícula editorial estática (ver HeroGridBackground).
+   Líneas de 1px monocromas atenuadas con máscara radial. Sin animación. */
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-foreground) 7%, transparent 93%) 0,
+      color-mix(in srgb, var(--color-foreground) 7%, transparent 93%) 1px,
+      transparent 1px,
+      transparent 72px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-foreground) 7%, transparent 93%) 0,
+      color-mix(in srgb, var(--color-foreground) 7%, transparent 93%) 1px,
+      transparent 1px,
+      transparent 72px
+    );
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 30%, transparent 75%);
 }

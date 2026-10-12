@@ -11,7 +11,7 @@ export default function HomePage() {
       {/* 00 HERO */}
       <section
         id="hero"
-        className={`relative grid min-h-dvh grid-cols-1 content-center gap-10 overflow-hidden py-24 md:grid-cols-2 md:gap-0 md:py-10 ${PAGE_PADDING_X}`}
+        className={`relative grid min-h-dvh grid-cols-1 content-center gap-10 overflow-hidden py-24 lg:grid-cols-2 lg:gap-0 lg:py-10 ${PAGE_PADDING_X}`}
       >
         <HeroSection />
       </section>

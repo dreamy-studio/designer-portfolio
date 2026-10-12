@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import FadeInView from "@/components/ui/FadeInView";
 import ImageModal from "@/components/ui/ImageModal";
-import CaseCard from "./CaseCard";
 
 interface CaseHeroProps {
   title: string;
@@ -81,12 +80,12 @@ export default function CaseHero({
         </FadeInView>
 
         <div className="flex min-w-0 items-start">
-          <CaseCard className="w-full min-w-0" delay={0.1}>
+          <FadeInView className="w-full min-w-0" delay={0.1}>
             <button
               type="button"
               onClick={() => setCoverOpen(true)}
               aria-label={`Ver imagen ampliada: ${title}`}
-              className="group relative flex aspect-[16/9] w-full cursor-zoom-in items-stretch overflow-hidden rounded-2xl bg-surface text-left"
+              className="group relative flex aspect-[16/9] w-full cursor-zoom-in items-stretch overflow-hidden bg-surface text-left"
             >
               <Image
                 src={thumbnail}
@@ -97,7 +96,7 @@ export default function CaseHero({
                 className="object-cover group-hover:scale-[1.02]"
               />
             </button>
-          </CaseCard>
+          </FadeInView>
         </div>
       </div>
 

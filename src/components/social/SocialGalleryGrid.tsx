@@ -78,7 +78,7 @@ export default function SocialGalleryGrid({ assets }: { assets: SocialAsset[] })
                 type="button"
                 onClick={() => setSelected(asset)}
                 aria-label={`Ver imagen ampliada: ${asset.alt}`}
-                className="group block h-full w-full cursor-zoom-in overflow-hidden rounded-2xl bg-surface text-left"
+                className="group block h-full w-full cursor-zoom-in overflow-hidden bg-surface text-left"
               >
                 <div
                   className={`relative w-full overflow-hidden bg-surface ${isPostsOnly ? "h-full" : aspect}`}

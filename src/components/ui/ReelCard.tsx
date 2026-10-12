@@ -26,7 +26,7 @@ export default function ReelCard({ src, alt, poster, videoSrc, caption }: Props)
             if (e.key === "Enter" || e.key === " ") setIsPlaying(true);
           }}
           aria-label={`Reproducir ${alt}`}
-          className="group relative cursor-pointer overflow-hidden rounded-2xl bg-black"
+          className="group relative cursor-pointer overflow-hidden bg-black"
         >
           <div className="relative aspect-[9/16] overflow-hidden bg-black">
             <Image
@@ -48,7 +48,7 @@ export default function ReelCard({ src, alt, poster, videoSrc, caption }: Props)
     }
 
     return (
-      <div className="overflow-hidden rounded-2xl bg-surface">
+      <div className="overflow-hidden bg-surface">
         <div className="aspect-[9/16] overflow-hidden bg-black">
           <video
             ref={videoRef}
@@ -69,7 +69,7 @@ export default function ReelCard({ src, alt, poster, videoSrc, caption }: Props)
   }
 
   return (
-    <div className="group overflow-hidden rounded-2xl bg-surface">
+    <div className="group overflow-hidden bg-surface">
       <div className="relative aspect-[9/16] overflow-hidden bg-surface">
         <Image
           src={poster ?? src}

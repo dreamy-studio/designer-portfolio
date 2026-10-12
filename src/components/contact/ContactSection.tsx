@@ -5,8 +5,8 @@ import { CONTACT } from "@/data/site";
 export default function ContactSection() {
   return (
     <FadeInView>
-      <div className="grid grid-cols-1 gap-16 md:grid-cols-12">
-        <div className="md:col-span-5">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="min-w-0 lg:col-span-5">
           <span className="text-sm font-mono font-medium text-muted">
             {CONTACT.sectionNumber}
           </span>
@@ -36,7 +36,7 @@ export default function ContactSection() {
             </a>
             <a
               href={CONTACT.emailHref}
-              className="inline-flex items-center gap-2 text-sm tracking-wide text-muted hover:text-foreground"
+              className="inline-flex min-w-0 items-center gap-2 break-all text-sm tracking-wide text-muted hover:text-foreground"
             >
               <svg
                 aria-hidden="true"
@@ -56,7 +56,7 @@ export default function ContactSection() {
             </a>
           </div>
         </div>
-        <div className="relative md:col-span-6 md:col-start-7">
+        <div className="relative min-w-0 lg:col-span-6 lg:col-start-7">
           <ContactForm />
         </div>
       </div>

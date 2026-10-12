@@ -3,7 +3,6 @@
 import { memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Card from "@/components/ui/Card";
 
 interface ProjectCardProps {
   slug: string;
@@ -26,12 +25,12 @@ function ProjectCard({
 
   return (
     <Link href={`/projects/${slug}`} className={isLarge ? "block h-full" : undefined}>
-      <Card className="group flex h-full cursor-pointer flex-col">
+      <div className="group flex h-full cursor-pointer flex-col">
         <div
           className={
             isLarge
-              ? "relative aspect-video overflow-hidden rounded-2xl bg-surface"
-              : "relative flex-1 min-h-45 overflow-hidden rounded-2xl bg-surface"
+              ? "relative aspect-video overflow-hidden bg-surface"
+              : "relative flex-1 min-h-45 overflow-hidden bg-surface"
           }
         >
           <Image
@@ -47,12 +46,12 @@ function ProjectCard({
           />
         </div>
         <div className="pt-5">
-          <p className="text-xs uppercase tracking-widest text-background/60">
+          <p className="text-xs uppercase tracking-widest text-muted">
             {eyebrow ?? year}
           </p>
-          <h3 className="mt-1 font-display text-xl font-bold text-background">{title}</h3>
+          <h3 className="mt-1 font-display text-xl font-bold text-foreground">{title}</h3>
         </div>
-      </Card>
+      </div>
     </Link>
   );
 }

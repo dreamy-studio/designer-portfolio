@@ -23,9 +23,9 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full flex-col gap-4">
+    <form onSubmit={handleSubmit} className="flex w-full min-w-0 flex-col gap-4">
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <label className="flex flex-col gap-2">
+        <label className="flex min-w-0 flex-col gap-2">
           <span className="font-mono text-xs font-medium uppercase tracking-widest text-muted">
             Nombre
           </span>
@@ -39,7 +39,7 @@ export default function ContactForm() {
             className={inputClass}
           />
         </label>
-        <label className="flex flex-col gap-2">
+        <label className="flex min-w-0 flex-col gap-2">
           <span className="font-mono text-xs font-medium uppercase tracking-widest text-muted">
             Correo
           </span>
